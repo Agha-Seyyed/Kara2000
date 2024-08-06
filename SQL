@@ -1,0 +1,12 @@
+declare @i int
+
+SET @i=1;
+WHILE @i <= 100
+BEGIN 
+    INSERT personnel ( [PersonelCode], [CardNo], [Name], [Family], [NationalCode], [BirthDate], [Sex], [Education], [FatherName], [Phone], [BranchID], [IsActive]) 
+
+    VALUES(@i,dbo.fn_setlen(@i,10),'Arya'+cast(@i as nvarchar),'mousavi'+cast(@i as nvarchar),dbo.fn_setlen(1234+@i,10),'2004-03-03',1,'bachelor','mehdi'+cast(@i as nvarchar),9121234+@i,123+@i,1) 
+  
+  
+  SET @i = @i + 1;
+END
